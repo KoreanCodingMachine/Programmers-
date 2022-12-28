@@ -2,6 +2,30 @@
 // 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.
 
 function solution(arr1, arr2) {
-  let answer = [[]];
+  var answer = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    let sum = [];
+    for (let j = 0; j < arr1[i].length; j++) {
+      sum.push(arr1[i][j] + arr2[i][j]);
+    }
+    answer.push(sum);
+  }
+
   return answer;
 }
+
+console.log(
+  solution(
+    [
+      [1, 2],
+      [2, 3],
+    ],
+    [
+      [3, 4],
+      [5, 6],
+    ]
+  )
+);
+
+console.log(solution([[1], [2]], [[3], [4]]));
