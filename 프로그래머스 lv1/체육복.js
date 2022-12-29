@@ -29,7 +29,7 @@ function solution(n, lost, reserve) {
   }
 
   for (let i = 0; i < n; i++) {
-    if (result[i] >= 1) {
+    if (result[i] === 1) {
       answer += 1;
     }
   }
