@@ -13,3 +13,41 @@
 // 는 시간이 음이 아닌 정수로 표현됩니다.
 // ▣ 출력설명
 // 첫째 줄에 피로연장에 동시에 존재하는 최대 인원을 출력하세요.
+
+function solution(times) {
+  let answer = Number.MIN_SAFE_INTEGER;
+
+  let TimeLine = [];
+
+  for (let x of times) {
+    TimeLine.push([x[0], 's']);
+    TimeLine.push([x[1], 'e']);
+  }
+
+  TimeLine.sort((a, b) => {
+    if (a[0] === b[0]) {
+      return a[1].charCodeAt() - b[1].charCodeAt();
+    } else {
+      return a[0] - b[0];
+    }
+  });
+
+  let cnt = 0;
+
+  for (let x of TimeLine) {
+    if (x[1] === 's') cnt++;
+    else cnt--;
+    answer = Math.max(answer, cnt);
+  }
+
+  return answer;
+}
+
+let arr = [
+  [14, 18],
+  [12, 15],
+  [15, 20],
+  [20, 30],
+  [5, 14],
+];
+console.log(solution(arr));
