@@ -7,33 +7,34 @@
 // 배열을 정렬해서  가장 큰 수를 저장할 변수를 하나 만들어서 그 수는 -1로 대체함
 
 // 런타임 에러 -> 시간복잡도 초과
-// function solution(numbers) {
-//   var answer = [];
+function solution(numbers) {
+  var answer = [];
 
-//   let max = Math.max(...numbers); // 9
+  let max = Math.max(...numbers); // 9
 
-//   for (let i = 0; i < numbers.length; i++) {
-//     for (let j = i; j < numbers.length; j++) {
-//       if (numbers[i] === max) {
-//         answer.push(-1);
-//         break;
-//       }
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i; j < numbers.length; j++) {
+      if (numbers[i] === max) {
+        answer.push(-1);
+        break;
+      }
 
-//       if (numbers[i] < numbers[j]) {
-//         answer.push(numbers[j]);
-//         break;
-//       }
+      if (numbers[i] < numbers[j]) {
+        answer.push(numbers[j]);
+        break;
+      }
 
-//       if (j === numbers.length - 1) {
-//         answer.push(-1);
-//         break;
-//       }
-//     }
-//   }
-//   return answer;
-// }
+      if (j === numbers.length - 1) {
+        answer.push(-1);
+        break;
+      }
+    }
+  }
+  return answer;
+}
 
 // stack
+// 코드는 이해 완료
 
 function solution(numbers) {
   const answer = Array(numbers.length).fill(-1);
@@ -47,8 +48,6 @@ function solution(numbers) {
   }
   return answer;
 }
-
-// stack -> [0 , 5 ,  ]
 
 console.log(solution([2, 3, 3, 5]));
 console.log(solution([9, 1, 5, 3, 6, 2]));
