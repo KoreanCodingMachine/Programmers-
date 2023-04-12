@@ -15,8 +15,6 @@
 
 function solution(arr) {
   let answer = arr;
-  //   sort 함수 이용
-  //   arr.sort((a, b) => a - b);
 
   for (let i = 0; i <= arr.length - 1; i++) {
     let idx = i;
